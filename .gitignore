@@ -1,6 +1,7 @@
 .idea/
 
 rockyou.txt
+rockyou_utf8.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

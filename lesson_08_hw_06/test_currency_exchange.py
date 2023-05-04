@@ -1,5 +1,5 @@
 import pytest
-from currency_exchange import Currency, Price
+from currency_exchange_v2 import Currency, Price
 
 
 def test_same_currency_addition():

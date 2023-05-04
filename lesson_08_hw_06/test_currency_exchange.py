@@ -1,5 +1,5 @@
 import pytest
-from currency_exchange import Price, Currency
+from currency_exchange import Currency, Price
 
 
 def test_same_currency_addition():
@@ -40,5 +40,3 @@ def test_double_conversion_currency_addition():
     result = price1 + price2
     assert result.amount == pytest.approx(585.1, 0.01)
     assert result.currency == Currency.UAH
-
-

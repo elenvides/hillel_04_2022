@@ -31,7 +31,7 @@ class Price:
         return {
             Currency.USD: {Currency.UAH: 37.5, Currency.GBP: 0.7727},
             Currency.UAH: {Currency.USD: 0.02667, Currency.GBP: 0.0216},
-            Currency.GBP: {Currency.USD: 1.2936, Currency.UAH: 46.45}
+            Currency.GBP: {Currency.USD: 1.2936, Currency.UAH: 46.45},
         }
 
     def _exchange(self, other, target_currency):
@@ -49,4 +49,4 @@ class Price:
             return usd_amount * rate_to_target_currency
 
     def __str__(self):
-        return f'{self.amount} {self.currency.value}'
+        return f"{self.amount} {self.currency.value}"

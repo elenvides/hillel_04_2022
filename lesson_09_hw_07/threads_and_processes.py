@@ -25,23 +25,27 @@ def download_image(image_url):
 
 if __name__ == "__main__":
     try:
-        total_start = perf_counter()
-
-        encryption_start = perf_counter()
         encryption_task = Process(target=encrypt_file, args=("rockyou.txt",))
-        encryption_task.start()
-        encryption_task.join()
-        encryption_counter = perf_counter() - encryption_start
-
-        download_start = perf_counter()
         download_task = threading.Thread(
             target=download_image, args=("https://picsum.photos/1000/1000",)
         )
+
+        total_start = perf_counter()
+
+        encryption_start = perf_counter()
+        encryption_task.start()
+
+        download_start = perf_counter()
         download_task.start()
+
         download_task.join()
         download_counter = perf_counter() - download_start
 
+        encryption_task.join()
+        encryption_counter = perf_counter() - encryption_start
+
         total_counter = perf_counter() - total_start
+
         print(
             f"Time taken for encryption task: {encryption_counter}, "
             f"I/O-bound task: {download_counter}, "

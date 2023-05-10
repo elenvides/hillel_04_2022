@@ -1,6 +1,7 @@
-from pprint import pprint
-import httpx
 import asyncio
+from pprint import pprint
+
+import httpx
 
 
 class ExchangeRates:
@@ -37,7 +38,7 @@ class ExchangeRates:
         )
         async with httpx.AsyncClient() as client:
             response = await client.get(url)
-        return response.json()['Realtime Currency Exchange Rate']['5. Exchange Rate']
+        return response.json()["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
 
 
 async def main():

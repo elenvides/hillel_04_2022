@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pympler = "*"
+requests = "*"
 
 [dev-packages]
 black = "*"
